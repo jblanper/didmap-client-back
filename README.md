@@ -2,7 +2,7 @@
 
 Unofficial Python API client for https://mapasinteractivos.didactalia.net
 
-The *Swagger* documentation of the API can be access in the following link: https://didmap-api.herokuapp.com/
+The *Swagger* documentation of the API can be access in the following link: https://didmap-api.herokuapp.com/docs
 
 ## Intallation
 
