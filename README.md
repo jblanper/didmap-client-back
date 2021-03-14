@@ -35,3 +35,5 @@ You can start the *uvicorn* server with the following command:
 ```
 $ start-dev
 ```
+
+Runs the app in the development mode. Open http://localhost:8000 to view it in the browser.
