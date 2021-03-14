@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from didmap_api.enums.filters import Filters
@@ -57,7 +57,7 @@ async def get_collection(
 
 
 @app.get("/map/")
-async def get_map(map_path: str):
+async def get_map(map_path: str = Query(..., description="Example path: 'physical-relief-of-central-america/0f6c3cbb-5c17-4c8f-b3c1-f9238bea0e81'")):
     """Get info about a Didactalia's interactive map"""
     map_graph = MapGraph()
     map_graph.load_map_ressource(map_path)
