@@ -1,7 +1,7 @@
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 from didmap_api.enums.filters import Filters
 from didmap_api.enums.map_types import MapTypes
@@ -14,6 +14,17 @@ app = FastAPI(
     title="Didmap API client",
     description="Unofficial Python API client for https://mapasinteractivos.didactalia.net",
     version="1.0.0",
+)
+
+
+origins = ['*']
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
 
 
